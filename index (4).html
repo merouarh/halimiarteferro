@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halimi Arte Ferro | Fer Forgé & Mobilier Métal — Chlef, Algérie</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cairo:wght@300;400;600;700;900&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   HALIMI ARTE FERRO — Brand: Orange + Black + White
+   Aesthetic: Editorial Luxury × Industrial Precision
+══════════════════════════════════════════ */
+:root {
+  --orange:     #E8440A;
+  --orange-dim: #C03608;
+  --orange-glow:#FF5520;
+  --black:      #0C0C0C;
+  --black2:     #141414;
+  --black3:     #1C1C1C;
+  --white:      #F8F6F2;
+  --white2:     #EDE9E3;
+  --gray:       #7A7A7A;
+  --gray-light: #ABABAB;
+  --border:     rgba(232,68,10,0.18);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Cairo', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide default cursor everywhere */
+*, *::before, *::after { cursor: none !important; }
+a, button, [onclick] { cursor: none !important; }
+body[lang="fr"], body[lang="en"] {
+  font-family: 'Barlow Condensed', sans-serif;
+  direction: ltr;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  width: 8px; height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transition: transform 0.1s;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(232,68,10,0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transition: transform 0.25s ease, width 0.3s, height 0.3s, opacity 0.3s;
+  transform: translate(-50%, -50%);
+}
+body:hover .cursor { opacity: 1; }
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* ══ NAVBAR ══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  background: rgba(12,12,12,0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+body[lang="fr"] nav, body[lang="en"] nav { flex-direction: row; }
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+  filter: none;
+  transition: filter 0.3s;
+}
+.nav-logo img:hover { filter: drop-shadow(0 0 8px rgba(232,68,10,0.6)); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.nav-link {
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+}
+.nav-link:hover { color: var(--orange); }
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.lang-btn {
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid rgba(232,68,10,0.25);
+  color: var(--gray);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: none !important;
+  transition: all 0.3s;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.lang-btn:hover, .lang-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+/* Diagonal divider */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--orange) 20%, var(--orange) 80%, transparent);
+  transform: skewX(-4deg);
+  z-index: 2;
+  opacity: 0.4;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 80px;
+  position: relative;
+  z-index: 3;
+}
+body[lang="fr"] .hero-left, body[lang="en"] .hero-left {
+  padding: 80px 80px 80px 60px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-eyebrow-line {
+  width: 40px; height: 1px;
+  background: var(--orange);
+}
+.hero-eyebrow-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+.hero-title .orange { color: var(--orange); }
+.hero-title .italic { font-style: italic; font-weight: 400; }
+
+.hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--gray-light);
+  max-width: 420px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.6s forwards;
+}
+body[lang="ar"] .hero-desc { font-family: 'Cairo', sans-serif; }
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.8s forwards;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  background: var(--orange);
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+}
+.btn-primary:hover {
+  background: var(--orange-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border: 1px solid rgba(248,246,242,0.2);
+  color: var(--gray-light);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
+  transition: filter 0.5s, transform 8s ease;
+}
+.hero-right:hover .hero-img-main {
+  filter: brightness(0.85) contrast(1.05);
+  transform: scale(1.03);
+}
+.hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--black) 0%, transparent 30%),
+              linear-gradient(to top, rgba(232,68,10,0.15) 0%, transparent 50%);
+}
+
+/* Hero badge */
+.hero-badge {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: rgba(12,12,12,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  padding: 16px 22px;
+  z-index: 4;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 1.2s forwards;
+}
+body[lang="fr"] .hero-badge, body[lang="en"] .hero-badge { left: auto; right: 40px; }
+.hero-badge-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--orange);
+  font-weight: 700;
+  line-height: 1;
+}
+.hero-badge-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ══ TICKER / MARQUEE ══ */
+.ticker {
+  background: var(--orange);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+.ticker-item {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 40px;
+  font-weight: 600;
+}
+.ticker-sep {
+  color: rgba(255,255,255,0.4);
+  margin: 0 -20px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ══ SECTION COMMONS ══ */
+.section { padding: 120px 80px; }
+.section-sm { padding: 80px 80px; }
+
+@media (max-width: 900px) {
+  .section, .section-sm { padding: 80px 28px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 55vw; min-height: 280px; }
+  .hero-left { padding: 60px 28px 40px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+}
+
+.s-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 18px;
+}
+.s-label::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--orange);
+}
+
+.s-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+}
+.s-title .orange { color: var(--orange); }
+
+/* ══ STATS ROW ══ */
+.stats-row {
+  background: var(--black3);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+@media (max-width: 700px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-cell {
+  padding: 50px 40px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell:hover { background: rgba(232,68,10,0.05); }
+.stat-cell::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.stat-cell:hover::after { transform: scaleX(1); }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  display: block;
+}
+.stat-lbl {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 10px;
+  display: block;
+}
+
+/* ══ GALLERY FILTERS ══ */
+.gallery-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 80px 40px;
+}
+@media (max-width: 900px) { .gallery-filters { padding: 0 28px 30px; } }
+
+.gf-btn {
+  padding: 7px 20px;
+  background: transparent;
+  border: 1px solid rgba(232,68,10,0.25);
+  color: var(--gray);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.gf-btn:hover, .gf-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* Gallery items hidden state */
+.g-item.hidden {
+  display: none;
+}
+.g-item {
+  transition: opacity 0.4s;
+}
+
+/* ══ SEE MORE BUTTON ══ */
+.see-more-wrap {
+  text-align: center;
+  padding: 50px 80px 0;
+}
+@media (max-width: 900px) { .see-more-wrap { padding: 36px 28px 0; } }
+
+.btn-see-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 44px;
+  background: transparent;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.35s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+.btn-see-more:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+.btn-see-more .arrow {
+  transition: transform 0.3s;
+  font-size: 1rem;
+}
+.btn-see-more.expanded .arrow {
+  transform: rotate(180deg);
+}
+
+/* ══ ATELIER SLIDER ══ */
+.atelier-section {
+  background: var(--black);
+  padding: 120px 0;
+  overflow: hidden;
+}
+.atelier-header {
+  padding: 0 80px 60px;
+}
+@media (max-width: 900px) { .atelier-header { padding: 0 28px 40px; } }
+
+.slider-wrap {
+  position: relative;
+}
+.slider-track {
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slide-item {
+  flex: 0 0 calc(33.333% - 2px);
+  aspect-ratio: 4/3;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+@media (max-width: 900px) { .slide-item { flex: 0 0 calc(50% - 2px); } }
+@media (max-width: 500px) { .slide-item { flex: 0 0 calc(85vw); } }
+
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, filter 0.4s;
+  filter: brightness(0.78) saturate(0.85);
+}
+.slide-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.95) saturate(1.1);
+}
+
+.slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(12,12,12,0.85) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: flex; align-items: flex-end;
+  padding: 24px;
+}
+.slide-item:hover .slide-overlay { opacity: 1; }
+.slide-caption {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+/* Slider nav arrows */
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  padding: 0 80px;
+}
+@media (max-width: 900px) { .slider-nav { padding: 0 28px; } }
+
+.slider-arrow {
+  width: 46px; height: 46px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--gray-light);
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.slider-arrow:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.slider-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gray);
+  border: none;
+  transition: all 0.3s;
+}
+.slider-dot.active {
+  background: var(--orange);
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* ══ GALLERY ══ */
+
+.gallery-section { background: var(--black2); padding: 120px 0; }
+.gallery-header { padding: 0 80px 60px; }
+@media (max-width: 900px) { .gallery-header { padding: 0 28px 40px; } }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 3px;
+}
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+.g-item {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+/* Layout: item 1 spans 2 cols + 2 rows (hero), rest normal */
+.g-item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: unset;
+  min-height: 520px;
+}
+.g-item:not(:first-child) { aspect-ratio: 3/4; }
+
+.g-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.5s;
+  filter: brightness(0.82) saturate(0.9);
+}
+.g-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.95) saturate(1.1);
+}
+
+.g-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(12,12,12,0.9) 0%, rgba(12,12,12,0.3) 40%, transparent 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.g-item:hover .g-overlay { opacity: 1; }
+
+/* Always show label on first big item */
+.g-item:first-child .g-overlay {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(12,12,12,0.85) 0%, transparent 55%);
+}
+
+.g-cat {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.g-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 400;
+}
+.g-item:first-child .g-name { font-size: 1.5rem; }
+
+.g-arrow {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(248,246,242,0.3);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 14px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+.g-item:hover .g-arrow {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* ══ SERVICES ══ */
+.services-section { background: var(--black); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-top: 70px;
+  border: 1px solid var(--border);
+}
+@media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
+
+.svc-card {
+  background: var(--black2);
+  padding: 50px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+.svc-card:hover { background: var(--black3); }
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.svc-card:hover::before { transform: scaleX(1); }
+
+.svc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: rgba(232,68,10,0.08);
+  font-weight: 900;
+  position: absolute;
+  top: 20px; right: 24px;
+  line-height: 1;
+}
+body[lang="ar"] .svc-num { right: auto; left: 24px; }
+
+.svc-icon { font-size: 1.8rem; margin-bottom: 20px; display: block; }
+.svc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.svc-desc {
+  font-size: 0.83rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+body[lang="ar"] .svc-desc { font-family: 'Cairo', sans-serif; font-size: 0.88rem; }
+
+/* ══ PROCESS ══ */
+.process-section { background: var(--black3); }
+.process-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 70px;
+  position: relative;
+}
+@media (max-width: 700px) { .process-row { grid-template-columns: repeat(2, 1fr); } }
+
+.process-row::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+  height: 1px;
+  background: linear-gradient(to right, var(--orange) 0%, rgba(232,68,10,0.2) 100%);
+}
+body[lang="fr"] .process-row::before,
+body[lang="en"] .process-row::before {
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+}
+
+.p-step {
+  padding: 0 30px;
+  text-align: center;
+  position: relative;
+}
+.p-dot {
+  width: 56px; height: 56px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  background: var(--black3);
+  position: relative; z-index: 1;
+  transition: background 0.3s;
+}
+.p-step:hover .p-dot { background: var(--orange); }
+.p-dot-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--orange);
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.p-step:hover .p-dot-num { color: var(--white); }
+.p-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.p-desc {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--gray);
+}
+body[lang="ar"] .p-desc { font-family: 'Cairo', sans-serif; }
+
+/* ══ CONTACT ══ */
+.contact-section { background: var(--black); }
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+  margin-top: 70px;
+}
+@media (max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 50px; } }
+
+.contact-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 36px;
+  font-weight: 400;
+  font-style: italic;
+}
+.contact-tagline .orange { color: var(--orange); font-style: normal; font-weight: 700; }
+
+.c-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.c-icon {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.c-text { font-size: 0.88rem; color: var(--gray-light); line-height: 1.6; }
+.c-text strong { color: var(--white); display: block; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+body[lang="ar"] .c-text { font-family: 'Cairo', sans-serif; }
+
+.export-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.export-badge span { font-size: 1.1rem; }
+
+/* Contact form */
+.c-form { }
+.c-field {
+  margin-bottom: 18px;
+}
+.c-field input, .c-field textarea, .c-field select {
+  width: 100%;
+  background: var(--black2);
+  border: 1px solid rgba(232,68,10,0.15);
+  border-bottom: 1px solid rgba(232,68,10,0.4);
+  color: var(--white);
+  padding: 14px 18px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+.c-field input:focus, .c-field textarea:focus {
+  border-color: var(--orange);
+  background: rgba(232,68,10,0.04);
+}
+.c-field input::placeholder, .c-field textarea::placeholder {
+  color: var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+.c-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 500px) { .c-row { grid-template-columns: 1fr; } }
+
+.c-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--orange);
+  border: none;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: none;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+  margin-top: 8px;
+}
+.c-submit:hover { background: var(--orange-glow); transform: translateY(-2px); }
+
+/* ══ FOOTER ══ */
+footer {
+  background: var(--black2);
+  border-top: 1px solid var(--border);
+  padding: 36px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 700px) { footer { padding: 28px; flex-direction: column; text-align: center; } }
+
+.footer-logo img {
+  height: 32px;
+  filter: none;
+  opacity: 0.85;
+}
+.footer-text {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+.footer-text span { color: var(--orange); }
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══ MULTILANG ══ */
+[data-lang] { display: none !important; }
+body[lang="ar"] [data-lang="ar"],
+body[lang="fr"] [data-lang="fr"],
+body[lang="en"] [data-lang="en"] { display: block !important; }
+.il { display: none !important; }
+body[lang="ar"] .il[data-lang="ar"],
+body[lang="fr"] .il[data-lang="fr"],
+body[lang="en"] .il[data-lang="en"] { display: inline !important; }
+.iflex { display: none !important; }
+body[lang="ar"] .iflex[data-lang="ar"],
+body[lang="fr"] .iflex[data-lang="fr"],
+body[lang="en"] .iflex[data-lang="en"] { display: inline-flex !important; }
+
+/* Lightbox */
+.lb {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+}
+.lb.open { display: flex; }
+.lb img { max-width: 92vw; max-height: 90vh; object-fit: contain; }
+.lb-close {
+  position: fixed; top: 20px; right: 28px;
+  background: var(--orange); border: none;
+  color: white; width: 40px; height: 40px;
+  font-size: 1.1rem; cursor: none;
+  display: flex; align-items: center; justify-content: center;
+}
+</style>
+</head>
+<body lang="en">
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="cur-ring"></div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img src="" id="lb-img" alt="">
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+<img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/f_auto,q_auto,h_44/v1775370815/1775318850459_hyglz3.jpg" alt="Halimi Arte Ferro">
+  </a>
+
+  <div class="nav-links">
+    <a class="nav-link" href="#gallery">
+      <span class="il" data-lang="ar">أعمالنا</span>
+      <span class="il" data-lang="fr">Réalisations</span>
+      <span class="il" data-lang="en">Portfolio</span>
+    </a>
+    <a class="nav-link" href="#services">
+      <span class="il" data-lang="ar">خدماتنا</span>
+      <span class="il" data-lang="fr">Services</span>
+      <span class="il" data-lang="en">Services</span>
+    </a>
+    <a class="nav-link" href="#process">
+      <span class="il" data-lang="ar">طريقة العمل</span>
+      <span class="il" data-lang="fr">Processus</span>
+      <span class="il" data-lang="en">Process</span>
+    </a>
+    <a class="nav-link" href="#contact">
+      <span class="il" data-lang="ar">تواصل</span>
+      <span class="il" data-lang="fr">Contact</span>
+      <span class="il" data-lang="en">Contact</span>
+    </a>
+  </div>
+
+  <div class="lang-switcher">
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">
+        <span class="il" data-lang="ar">الشلف · الجزائر · منذ 2010</span>
+        <span class="il" data-lang="fr">Chlef · Algérie · Depuis 2010</span>
+        <span class="il" data-lang="en">Chlef · Algeria · Since 2010</span>
+      </span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="il" data-lang="ar">
+        حديد يرسم<br>
+        <span class="orange">جمالاً</span><br>
+        <span class="italic">لا يُنسى</span>
+      </span>
+      <span class="il" data-lang="fr">
+        Le Fer devient<br>
+        <span class="orange">Art</span> &amp;<br>
+        <span class="italic">Élégance</span>
+      </span>
+      <span class="il" data-lang="en">
+        Iron shaped into<br>
+        <span class="orange">Art</span> &amp;<br>
+        <span class="italic">Elegance</span>
+      </span>
+    </h1>
+
+    <p class="hero-desc">
+      <span class="il" data-lang="ar">نُحوّل الحديد إلى تحف فنية معاصرة — أبواب مصممة، درابزين مطروق، أثاث راقٍ. صناعة جزائرية يدوية بمعايير أوروبية.</span>
+      <span class="il" data-lang="fr">Nous transformons le fer en pièces d'exception — portes design, rampes forgées, mobilier luxe. Savoir-faire algérien aux standards européens.</span>
+      <span class="il" data-lang="en">We transform iron into contemporary masterpieces — designer doors, forged railings, luxury furniture. Algerian craft at European standards.</span>
+    </p>
+
+    <div class="hero-actions">
+      <a href="#gallery" class="btn-primary">
+        <span class="il" data-lang="ar">استعرض الأعمال</span>
+        <span class="il" data-lang="fr">Voir les Réalisations</span>
+        <span class="il" data-lang="en">View Our Work</span>
+        <span>→</span>
+      </a>
+      <a href="#contact" class="btn-outline">
+        <span class="il" data-lang="ar">طلب عرض سعر</span>
+        <span class="il" data-lang="fr">Demander un Devis</span>
+        <span class="il" data-lang="en">Request a Quote</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372355/IMG-20260121-WA0036_vk176q.jpg" alt="Halimi Arte Ferro — Réalisations" class="hero-img-main">
+    <div class="hero-img-overlay"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">+200</div>
+      <div class="hero-badge-label">
+        <span class="il" data-lang="ar">مشروع منجز</span>
+        <span class="il" data-lang="fr">Projets Réalisés</span>
+        <span class="il" data-lang="en">Completed Projects</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-item">FER FORGÉ <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PORTES EN FER <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">MOBILIER MÉTAL <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RAMPES D'ESCALIER <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PERGOLAS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">EXPORT INTERNATIONAL <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">أبواب حديدية <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">أثاث معاصر <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">درابزين فني <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">HALIMI ARTE FERRO <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">FER FORGÉ <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PORTES EN FER <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">MOBILIER MÉTAL <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RAMPES D'ESCALIER <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PERGOLAS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">EXPORT INTERNATIONAL <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">أبواب حديدية <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">أثاث معاصر <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">درابزين فني <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">HALIMI ARTE FERRO <span class="ticker-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ══ STATS ══ -->
+<div class="stats-row reveal">
+  <div class="stat-cell">
+    <span class="stat-num">+200</span>
+    <span class="stat-lbl">
+      <span class="il" data-lang="ar">مشروع منجز</span>
+      <span class="il" data-lang="fr">Projets Réalisés</span>
+      <span class="il" data-lang="en">Projects Done</span>
+    </span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">10+</span>
+    <span class="stat-lbl">
+      <span class="il" data-lang="ar">سنوات خبرة</span>
+      <span class="il" data-lang="fr">Ans d'Expérience</span>
+      <span class="il" data-lang="en">Years Experience</span>
+    </span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">6</span>
+    <span class="stat-lbl">
+      <span class="il" data-lang="ar">تخصصات</span>
+      <span class="il" data-lang="fr">Spécialités</span>
+      <span class="il" data-lang="en">Specialties</span>
+    </span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">100%</span>
+    <span class="stat-lbl">
+      <span class="il" data-lang="ar">صنع يدوي</span>
+      <span class="il" data-lang="fr">Fait à la Main</span>
+      <span class="il" data-lang="en">Handcrafted</span>
+    </span>
+  </div>
+</div>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header reveal">
+    <div class="s-label">
+      <span class="il" data-lang="ar">معرض الأعمال</span>
+      <span class="il" data-lang="fr">Galerie de Réalisations</span>
+      <span class="il" data-lang="en">Portfolio Gallery</span>
+    </div>
+    <h2 class="s-title">
+      <span class="il" data-lang="ar">أحدث <span class="orange">إنجازاتنا</span></span>
+      <span class="il" data-lang="fr">Nos Dernières <span class="orange">Réalisations</span></span>
+      <span class="il" data-lang="en">Our Latest <span class="orange">Work</span></span>
+    </h2>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="gallery-filters reveal">
+    <button class="gf-btn active" data-filter="all" onclick="filterGallery('all', this)">
+      <span class="il" data-lang="ar">الكل</span>
+      <span class="il" data-lang="fr">Tout</span>
+      <span class="il" data-lang="en">All</span>
+    </button>
+    <button class="gf-btn" data-filter="railings" onclick="filterGallery('railings', this)">
+      <span class="il" data-lang="ar">درابزين</span>
+      <span class="il" data-lang="fr">Rampes</span>
+      <span class="il" data-lang="en">Railings</span>
+    </button>
+    <button class="gf-btn" data-filter="doors" onclick="filterGallery('doors', this)">
+      <span class="il" data-lang="ar">أبواب</span>
+      <span class="il" data-lang="fr">Portes</span>
+      <span class="il" data-lang="en">Doors</span>
+    </button>
+    <button class="gf-btn" data-filter="furniture" onclick="filterGallery('furniture', this)">
+      <span class="il" data-lang="ar">أثاث</span>
+      <span class="il" data-lang="fr">Mobilier</span>
+      <span class="il" data-lang="en">Furniture</span>
+    </button>
+    <button class="gf-btn" data-filter="outdoor" onclick="filterGallery('outdoor', this)">
+      <span class="il" data-lang="ar">خارجي</span>
+      <span class="il" data-lang="fr">Extérieur</span>
+      <span class="il" data-lang="en">Outdoor</span>
+    </button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+
+    <!-- 1 — Railing classic (HERO) — always show -->
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">
+         
+        </div>
+        <div class="g-name">
+          
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 2 — Door -->
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg" alt="Iron Door">
+      <div class="g-overlay">
+        <div class="g-cat">
+         
+        </div>
+        <div class="g-name">
+         
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 3 — Outdoor arches -->
+    <div class="g-item" data-cat="outdoor" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320145/IMG-20260121-WA0287_gprcku.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320145/IMG-20260121-WA0287_gprcku.jpg" alt="Garden Arches">
+      <div class="g-overlay">
+        <div class="g-cat">
+          
+        </div>
+        <div class="g-name">
+         
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 4 — Geometric railing -->
+    <div class="g-item" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320118/IMG-20260121-WA0438_gz50qw.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320118/IMG-20260121-WA0438_gz50qw.jpg" alt="Geometric Railing">
+      <div class="g-overlay">
+        <div class="g-cat">
+          
+        </div>
+        <div class="g-name">
+         
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 5 — Furniture (extra — hidden initially) -->
+    <div class="g-item extra hidden" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg" alt="Metal Furniture">
+      <div class="g-overlay">
+        <div class="g-cat">
+          <span class="il" data-lang="ar">أثاث حديدي</span>
+          <span class="il" data-lang="fr">Mobilier Métal</span>
+          <span class="il" data-lang="en">Metal Furniture</span>
+        </div>
+        <div class="g-name">
+          <span class="il" data-lang="ar">أثاث صناعي راقي</span>
+          <span class="il" data-lang="fr">Mobilier Industriel Luxe</span>
+          <span class="il" data-lang="en">Luxury Industrial Furniture</span>
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 6 — Door 2 (extra — hidden initially) -->
+    <div class="g-item extra hidden" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg" alt="Iron Door Design">
+      <div class="g-overlay">
+        <div class="g-cat">
+          <span class="il" data-lang="ar">أبواب مصممة</span>
+          <span class="il" data-lang="fr">Portes Design</span>
+          <span class="il" data-lang="en">Designer Doors</span>
+        </div>
+        <div class="g-name">
+          <span class="il" data-lang="ar">باب حديدي مع زجاج</span>
+          <span class="il" data-lang="fr">Porte Fer & Verre</span>
+          <span class="il" data-lang="en">Iron & Glass Door</span>
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 7 — Outdoor balcony (extra — hidden initially) -->
+    <div class="g-item extra hidden" data-cat="outdoor" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320145/IMG-20260121-WA0287_gprcku.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320145/IMG-20260121-WA0287_gprcku.jpg" alt="Balcony Railing">
+      <div class="g-overlay">
+        <div class="g-cat">
+          <span class="il" data-lang="ar">بلكونة وشرفة</span>
+          <span class="il" data-lang="fr">Balcon & Terrasse</span>
+          <span class="il" data-lang="en">Balcony & Terrace</span>
+        </div>
+        <div class="g-name">
+          <span class="il" data-lang="ar">حاجز بلكونة فني</span>
+          <span class="il" data-lang="fr">Garde-Corps Ornemental</span>
+          <span class="il" data-lang="en">Ornamental Balcony Guard</span>
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- 8 — Railing 3 (extra — hidden initially) -->
+    <div class="g-item extra hidden" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320118/IMG-20260121-WA0438_gz50qw.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320118/IMG-20260121-WA0438_gz50qw.jpg" alt="Railing Design">
+      <div class="g-overlay">
+        <div class="g-cat">
+          <span class="il" data-lang="ar">درابزين داخلي</span>
+          <span class="il" data-lang="fr">Rampe Intérieure</span>
+          <span class="il" data-lang="en">Interior Railing</span>
+        </div>
+        <div class="g-name">
+          <span class="il" data-lang="ar">درابزين بزخارف</span>
+          <span class="il" data-lang="fr">Rampe Ornementée</span>
+          <span class="il" data-lang="en">Ornate Interior Railing</span>
+        </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+  </div>
+     
+
+     <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320116/IMG-20260121-WA0423_yhtrau.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320116/IMG-20260121-WA0423_yhtrau.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- here nabda change lien  --> 
+     <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372788/IMG-20260121-WA0224_cpjmzf.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372788/IMG-20260121-WA0224_cpjmzf.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div> 
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372444/IMG-20260121-WA0206_nxsuqg.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372444/IMG-20260121-WA0206_nxsuqg.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372417/IMG-20260121-WA0194_vjnmdg.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372417/IMG-20260121-WA0194_vjnmdg.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+       
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372416/IMG-20260121-WA0192_ecxlvs.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372416/IMG-20260121-WA0192_ecxlvs.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372366/IMG-20260121-WA0037_i6tqls.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372366/IMG-20260121-WA0037_i6tqls.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372370/IMG-20260121-WA0062_wsnzcw.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372370/IMG-20260121-WA0062_wsnzcw.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+        <div class="g-item" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372359/IMG-20260121-WA0031_ztaslw.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372359/IMG-20260121-WA0031_ztaslw.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372352/IMG-20260121-WA0035_ziamd7.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372352/IMG-20260121-WA0035_ziamd7.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+       
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372321/IMG-20260121-WA0003_xd4ncz.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372321/IMG-20260121-WA0003_xd4ncz.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="outdoor" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372334/IMG-20260121-WA0017_vto1ma.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372334/IMG-20260121-WA0017_vto1ma.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372330/IMG-20260121-WA0007_opb2fq.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372330/IMG-20260121-WA0007_opb2fq.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+            <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372370/IMG-20260121-WA0058_koxigg.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372370/IMG-20260121-WA0058_koxigg.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="doors" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372386/IMG-20260121-WA0075_jxhdm0.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372386/IMG-20260121-WA0075_jxhdm0.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+       
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372317/IMG-20260121-WA0002_xhriac.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372317/IMG-20260121-WA0002_xhriac.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320144/IMG-20260121-WA0274_swnkcn.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320144/IMG-20260121-WA0274_swnkcn.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320140/IMG-20260121-WA0358_mdrxa5.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320140/IMG-20260121-WA0358_mdrxa5.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+
+    
+
+                <div class="g-item" data-cat="outdoor" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320129/IMG-20260121-WA0442_gv0uye.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320129/IMG-20260121-WA0442_gv0uye.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320120/IMG-20260121-WA0417_dye9m0.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320120/IMG-20260121-WA0417_dye9m0.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+       
+
+    <div class="g-item" data-cat="railings" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775319071/1000033575_lb7sd8.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775319071/1000033575_lb7sd8.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="outdoor" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320103/IMG-20260121-WA0432_e6a6sc.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320103/IMG-20260121-WA0432_e6a6sc.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320142/IMG-20260121-WA0383_jvmfz7.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320142/IMG-20260121-WA0383_jvmfz7.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320131/IMG-20260121-WA0414_apeosd.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320131/IMG-20260121-WA0414_apeosd.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+<div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320112/IMG-20260121-WA0421_cmwkej.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320112/IMG-20260121-WA0421_cmwkej.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    
+      <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320134/IMG-20260121-WA0366_frpzgd.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320134/IMG-20260121-WA0366_frpzgd.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>  
+
+ <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320156/IMG-20260121-WA0256_p9vrp6.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320156/IMG-20260121-WA0256_p9vrp6.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="g-item" data-cat="furniture" onclick="openLb('https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372446/IMG-20260121-WA0195_guekzf.jpg')">
+      <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775372446/IMG-20260121-WA0195_guekzf.jpg" alt="Staircase Railing">
+      <div class="g-overlay">
+        <div class="g-cat">  </div>
+        <div class="g-name">  </div>
+        <div class="g-arrow">→</div>
+      </div>
+    </div>
+
+    
+
+
+  <!-- SEE MORE BUTTON -->
+  <div class="see-more-wrap reveal" id="see-more-wrap">
+    <button class="btn-see-more" id="btn-see-more" onclick="toggleMore()">
+      <span id="see-more-label">
+        <span class="il" data-lang="ar">عرض المزيد</span>
+        <span class="il" data-lang="fr">Voir Plus</span>
+        <span class="il" data-lang="en">See More</span>
+      </span>
+      <span class="arrow">▼</span>
+    </button>
+  </div>
+</section>
+
+<!-- ══ ATELIER SLIDER ══ -->
+<section class="atelier-section" id="atelier">
+  <div class="atelier-header reveal">
+    <div class="s-label">
+      <span class="il" data-lang="ar">المشغل والمعرض</span>
+      <span class="il" data-lang="fr">Notre Atelier & Showroom</span>
+      <span class="il" data-lang="en">Our Workshop & Showroom</span>
+    </div>
+    <h2 class="s-title">
+      <span class="il" data-lang="ar">من داخل <span class="orange">الورشة</span></span>
+      <span class="il" data-lang="fr">De l'intérieur de <span class="orange">l'Atelier</span></span>
+      <span class="il" data-lang="en">Inside the <span class="orange">Workshop</span></span>
+    </h2>
+  </div>
+
+  <div class="slider-wrap">
+    <div class="slider-track" id="slider-track">
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg" alt="Atelier 1">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">الورشة الرئيسية</span>
+            <span class="il" data-lang="fr">Atelier Principal</span>
+            <span class="il" data-lang="en">Main Workshop</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg" alt="Atelier 2">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">قسم التلحيم</span>
+            <span class="il" data-lang="fr">Section Soudure</span>
+            <span class="il" data-lang="en">Welding Section</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320145/IMG-20260121-WA0287_gprcku.jpg" alt="Atelier 3">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">قسم الأثاث</span>
+            <span class="il" data-lang="fr">Espace Mobilier</span>
+            <span class="il" data-lang="en">Furniture Display</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320118/IMG-20260121-WA0438_gz50qw.jpg" alt="Atelier 4">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">منطقة العرض</span>
+            <span class="il" data-lang="fr">Zone d'Exposition</span>
+            <span class="il" data-lang="en">Exhibition Area</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320178/IMG-20260121-WA0247_dani8o.jpg" alt="Atelier 5">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">تفاصيل الحرفة</span>
+            <span class="il" data-lang="fr">Détails Artisanaux</span>
+            <span class="il" data-lang="en">Craft Details</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/v1775320158/IMG-20260121-WA0257_pitzj1.jpg" alt="Atelier 6">
+        <div class="slide-overlay">
+          <div class="slide-caption">
+            <span class="il" data-lang="ar">المنتجات الجاهزة</span>
+            <span class="il" data-lang="fr">Produits Finis</span>
+            <span class="il" data-lang="en">Finished Products</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slider-nav reveal">
+    <button class="slider-arrow" id="slide-prev" onclick="slideMove(-1)" aria-label="Previous">‹</button>
+    <div class="slider-dots" id="slider-dots"></div>
+    <button class="slider-arrow" id="slide-next" onclick="slideMove(1)" aria-label="Next">›</button>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="section services-section" id="services">
+  <div class="reveal">
+    <div class="s-label">
+      <span class="il" data-lang="ar">خدماتنا</span>
+      <span class="il" data-lang="fr">Nos Services</span>
+      <span class="il" data-lang="en">Our Services</span>
+    </div>
+    <h2 class="s-title">
+      <span class="il" data-lang="ar">ماذا <span class="orange">نصنع؟</span></span>
+      <span class="il" data-lang="fr">Ce Que Nous <span class="orange">Créons</span></span>
+      <span class="il" data-lang="en">What We <span class="orange">Create</span></span>
+    </h2>
+  </div>
+
+  <div class="services-grid reveal">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <span class="svc-icon">🚪</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">أبواب حديدية</span>
+        <span class="il" data-lang="fr">Portes en Fer Forgé</span>
+        <span class="il" data-lang="en">Wrought Iron Doors</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">أبواب رئيسية وداخلية بتصاميم معاصرة وكلاسيكية — جمال مع أمان فائق</span>
+        <span class="il" data-lang="fr">Portes d'entrée et intérieures en designs contemporains et classiques — beauté et sécurité supérieure</span>
+        <span class="il" data-lang="en">Entry and interior doors in contemporary and classic designs — beauty with superior security</span>
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <span class="svc-icon">🪜</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">درابزين وحواجز</span>
+        <span class="il" data-lang="fr">Rampes d'Escalier</span>
+        <span class="il" data-lang="en">Stair Railings</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">درابزين داخلية وخارجية بنقوش فنية فريدة تضيف فخامة لكل مكان</span>
+        <span class="il" data-lang="fr">Rampes intérieures et extérieures avec ornements artistiques uniques</span>
+        <span class="il" data-lang="en">Interior and exterior railings with unique artistic ornaments</span>
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <span class="svc-icon">🛋️</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">أثاث حديدي فاخر</span>
+        <span class="il" data-lang="fr">Mobilier Métal Luxe</span>
+        <span class="il" data-lang="en">Luxury Metal Furniture</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">طاولات، كراسي، رفوف، كونسولات — ذهبي، أسود، أبيض، بأسلوب عصري راقٍ</span>
+        <span class="il" data-lang="fr">Tables, chaises, étagères, consoles — or, noir, blanc, en style luxueux</span>
+        <span class="il" data-lang="en">Tables, chairs, shelves, consoles — gold, black, white, in luxury style</span>
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <span class="svc-icon">🏛️</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">بلكونات وشرفات</span>
+        <span class="il" data-lang="fr">Balcons & Garde-Corps</span>
+        <span class="il" data-lang="en">Balconies & Terraces</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">حواجز بلكونات بتصاميم هندسية عصرية أو تقليدية مطروقة</span>
+        <span class="il" data-lang="fr">Garde-corps en designs géométriques modernes ou forgés traditionnels</span>
+        <span class="il" data-lang="en">Balcony railings in modern geometric or traditional forged designs</span>
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <span class="svc-icon">⛩️</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">بوابات وأسوار</span>
+        <span class="il" data-lang="fr">Portails & Clôtures</span>
+        <span class="il" data-lang="en">Gates & Fences</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">بوابات رئيسية وسياجات حديدية بتصاميم مخصصة حسب الطلب</span>
+        <span class="il" data-lang="fr">Portails et clôtures en fer sur mesure selon vos spécifications</span>
+        <span class="il" data-lang="en">Main gates and iron fences customized to your specifications</span>
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">06</div>
+      <span class="svc-icon">🌿</span>
+      <h3 class="svc-title">
+        <span class="il" data-lang="ar">بيرغولا وهياكل خارجية</span>
+        <span class="il" data-lang="fr">Pergolas & Structures</span>
+        <span class="il" data-lang="en">Pergolas & Outdoor Structures</span>
+      </h3>
+      <p class="svc-desc">
+        <span class="il" data-lang="ar">أقواس حدائق، بيرغولا، أكشاك حديدية للمساحات الخارجية</span>
+        <span class="il" data-lang="fr">Arches de jardin, pergolas, kiosques en fer pour espaces extérieurs</span>
+        <span class="il" data-lang="en">Garden arches, pergolas, iron kiosks for outdoor spaces</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="section process-section" id="process">
+  <div class="reveal">
+    <div class="s-label">
+      <span class="il" data-lang="ar">طريقة عملنا</span>
+      <span class="il" data-lang="fr">Notre Processus</span>
+      <span class="il" data-lang="en">How We Work</span>
+    </div>
+    <h2 class="s-title">
+      <span class="il" data-lang="ar">من <span class="orange">الفكرة</span> إلى التسليم</span>
+      <span class="il" data-lang="fr">De <span class="orange">l'Idée</span> à la Livraison</span>
+      <span class="il" data-lang="en">From <span class="orange">Concept</span> to Delivery</span>
+    </h2>
+  </div>
+  <div class="process-row reveal">
+    <div class="p-step">
+      <div class="p-dot"><span class="p-dot-num">01</span></div>
+      <h4 class="p-title">
+        <span class="il" data-lang="ar">التصميم</span>
+        <span class="il" data-lang="fr">Conception</span>
+        <span class="il" data-lang="en">Design</span>
+      </h4>
+      <p class="p-desc">
+        <span class="il" data-lang="ar">نستمع لرؤيتك ونرسم مقترح مخصص</span>
+        <span class="il" data-lang="fr">Nous écoutons et dessinons un projet sur mesure</span>
+        <span class="il" data-lang="en">We listen and sketch a custom proposal</span>
+      </p>
+    </div>
+    <div class="p-step">
+      <div class="p-dot"><span class="p-dot-num">02</span></div>
+      <h4 class="p-title">
+        <span class="il" data-lang="ar">القياسات</span>
+        <span class="il" data-lang="fr">Mesures</span>
+        <span class="il" data-lang="en">Measurements</span>
+      </h4>
+      <p class="p-desc">
+        <span class="il" data-lang="ar">أخذ القياسات الدقيقة في الموقع</span>
+        <span class="il" data-lang="fr">Prises de mesures précises sur site</span>
+        <span class="il" data-lang="en">Precise on-site measurements</span>
+      </p>
+    </div>
+    <div class="p-step">
+      <div class="p-dot"><span class="p-dot-num">03</span></div>
+      <h4 class="p-title">
+        <span class="il" data-lang="ar">التصنيع</span>
+        <span class="il" data-lang="fr">Fabrication</span>
+        <span class="il" data-lang="en">Manufacturing</span>
+      </h4>
+      <p class="p-desc">
+        <span class="il" data-lang="ar">صناعة يدوية دقيقة بأجود المواد</span>
+        <span class="il" data-lang="fr">Fabrication artisanale avec matériaux premium</span>
+        <span class="il" data-lang="en">Precise handcraft with premium materials</span>
+      </p>
+    </div>
+    <div class="p-step">
+      <div class="p-dot"><span class="p-dot-num">04</span></div>
+      <h4 class="p-title">
+        <span class="il" data-lang="ar">التسليم</span>
+        <span class="il" data-lang="fr">Livraison</span>
+        <span class="il" data-lang="en">Delivery</span>
+      </h4>
+      <p class="p-desc">
+        <span class="il" data-lang="ar">تركيب احترافي مع ضمان رضا العميل</span>
+        <span class="il" data-lang="fr">Installation professionnelle avec garantie</span>
+        <span class="il" data-lang="en">Professional install with satisfaction guarantee</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="section contact-section" id="contact">
+  <div class="reveal">
+    <div class="s-label">
+      <span class="il" data-lang="ar">تواصل معنا</span>
+      <span class="il" data-lang="fr">Nous Contacter</span>
+      <span class="il" data-lang="en">Contact Us</span>
+    </div>
+    <h2 class="s-title">
+      <span class="il" data-lang="ar">ابدأ <span class="orange">مشروعك</span></span>
+      <span class="il" data-lang="fr">Démarrez Votre <span class="orange">Projet</span></span>
+      <span class="il" data-lang="en">Start Your <span class="orange">Project</span></span>
+    </h2>
+  </div>
+
+  <div class="contact-inner reveal">
+    <div>
+      <p class="contact-tagline">
+        <span class="il" data-lang="ar">نصنع ما <span class="orange">تتخيله</span>، بدقة لا تُنسى</span>
+        <span class="il" data-lang="fr">Nous créons ce que vous <span class="orange">imaginez</span></span>
+        <span class="il" data-lang="en">We build what you <span class="orange">imagine</span></span>
+      </p>
+
+      <div class="c-info">
+        <div class="c-icon">📍</div>
+        <div class="c-text">
+          <strong>
+            <span class="il" data-lang="ar">الموقع</span>
+            <span class="il" data-lang="fr">Localisation</span>
+            <span class="il" data-lang="en">Location</span>
+          </strong>
+          <span class="il" data-lang="ar">الشلف، الجزائر</span>
+          <span class="il" data-lang="fr">Chlef, Algérie</span>
+          <span class="il" data-lang="en">Chlef, Algeria</span>
+        </div>
+      </div>
+
+      <div class="c-info">
+        <div class="c-icon">📞</div>
+        <div class="c-text">
+          <strong>
+            <span class="il" data-lang="ar">الهاتف</span>
+            <span class="il" data-lang="fr">Téléphone</span>
+            <span class="il" data-lang="en">Phone</span>
+          </strong>
+          <span dir="ltr">+213 781 36 33 36</span>
+        </div>
+      </div>
+
+      <div class="c-info">
+        <div class="c-icon">🌍</div>
+        <div class="c-text">
+          <strong>
+            <span class="il" data-lang="ar">تصدير دولي</span>
+            <span class="il" data-lang="fr">Export International</span>
+            <span class="il" data-lang="en">International Export</span>
+          </strong>
+          <span class="il" data-lang="ar">فرنسا · بلجيكا · أوروبا</span>
+          <span class="il" data-lang="fr">France · Belgique · Europe</span>
+          <span class="il" data-lang="en">France · Belgium · Europe</span>
+        </div>
+      </div>
+
+      <div class="export-badge">
+        <span>✈</span>
+        <span class="il" data-lang="ar">قادرون على التصدير إلى أوروبا</span>
+        <span class="il" data-lang="fr">Export Europe Disponible</span>
+        <span class="il" data-lang="en">Export to Europe Available</span>
+      </div>
+    </div>
+
+    <div class="c-form">
+      <!-- SUCCESS STATE -->
+      <div class="form-success" id="form-success" style="display:none; text-align:center; padding:50px 20px; border:1px solid var(--orange);">
+        <div style="font-size:2.5rem; margin-bottom:16px;">✦</div>
+        <p style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--white); margin-bottom:10px;">
+          <span class="il" data-lang="ar">تم إرسال طلبك بنجاح!</span>
+          <span class="il" data-lang="fr">Message envoyé avec succès!</span>
+          <span class="il" data-lang="en">Message sent successfully!</span>
+        </p>
+        <p style="font-size:0.8rem; color:var(--gray); letter-spacing:1px;">
+          <span class="il" data-lang="ar">سنتواصل معك قريباً</span>
+          <span class="il" data-lang="fr">Nous vous contacterons bientôt</span>
+          <span class="il" data-lang="en">We will contact you soon</span>
+        </p>
+      </div>
+
+      <!-- FORM -->
+      <form id="contact-form" netlify name="contact" method="POST" action="#" data-netlify="true" data-netlify-honeypot="bot-field" style="">
+        
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="c-row">
+          <div class="c-field"><input type="text" name="name" id="f-name" placeholder="الاسم الكامل" required></div>
+          <div class="c-field"><input type="email" name="email" placeholder="Email" required></div>
+        </div>
+        <div class="c-field"><input type="tel" name="phone" dir="ltr" placeholder="+213..."></div>
+        <div class="c-field"><textarea rows="5" name="message" id="f-msg" placeholder="صف مشروعك..." required></textarea></div>
+        <button type="submit" class="c-submit" id="f-submit">
+          <span id="btn-text">
+            <span class="il" data-lang="ar">إرسال الطلب ✦</span>
+            <span class="il" data-lang="fr">Envoyer la Demande ✦</span>
+            <span class="il" data-lang="en">Send Request ✦</span>
+          </span>
+          <span id="btn-loading" style="display:none; letter-spacing:2px;">⏳ ...</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">
+<img src="https://res.cloudinary.com/dbh0mkfhe/image/upload/f_auto,q_auto,h_32/v1775370815/1775318850459_hyglz3.jpg" alt="Halimi Arte Ferro">
+  </div>
+  <div class="footer-text">
+    © 2026 <span>Halimi Arte Ferro</span> ·
+    <span class="il" data-lang="ar">الشلف، الجزائر</span>
+    <span class="il" data-lang="fr">Chlef, Algérie</span>
+    <span class="il" data-lang="en">Chlef, Algeria</span>
+    · All rights reserved
+  </div>
+  <div class="footer-text" style="font-size:0.65rem; opacity:0.5;">
+    FER FORGÉ · MOBILIER MÉTAL · EXPORT
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════
+// HALIMI ARTE FERRO — JS
+// ════════════════════════════════════════
+
+// ── CURSOR ──
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px';
+  cur.style.top = my + 'px';
+});
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a,button,.g-item,.slide-item').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.width = '50px'; ring.style.height = '50px';
+    ring.style.borderColor = 'var(--orange)';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.width = '32px'; ring.style.height = '32px';
+    ring.style.borderColor = 'rgba(232,68,10,0.5)';
+  });
+});
+
+// ── LANGUAGE ──
+function setLang(l) {
+  document.body.setAttribute('lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === l.toLowerCase());
+  });
+  const ph = {
+    ar: { name: 'الاسم الكامل', msg: 'صف مشروعك أو طلبك...' },
+    fr: { name: 'Votre nom complet', msg: 'Décrivez votre projet...' },
+    en: { name: 'Your full name', msg: 'Describe your project...' }
+  };
+  const fn = document.getElementById('f-name');
+  const fm = document.getElementById('f-msg');
+  if (fn) fn.placeholder = ph[l].name;
+  if (fm) fm.placeholder = ph[l].msg;
+  document.body.dir = l === 'ar' ? 'rtl' : 'ltr';
+}
+setLang('en');
+
+// ── GALLERY FILTER ──
+let currentFilter = 'all';
+let isExpanded = false;
+
+function filterGallery(cat, btn) {
+  currentFilter = cat;
+  // Update active button
+  document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Reset see more
+  isExpanded = false;
+  const smBtn = document.getElementById('btn-see-more');
+  smBtn.classList.remove('expanded');
+  // Show/hide items
+  applyFilter();
+}
+
+function applyFilter() {
+  const items = document.querySelectorAll('#gallery-grid .g-item');
+  let visible = 0;
+  items.forEach(item => {
+    const cat = item.dataset.cat;
+    const matches = currentFilter === 'all' || cat === currentFilter;
+    if (matches) {
+      if (visible < 4 || isExpanded) {
+        item.classList.remove('hidden');
+        visible++;
+      } else {
+        item.classList.add('hidden');
+      }
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+  // Show/hide see more button
+  const total = document.querySelectorAll(`#gallery-grid .g-item${currentFilter === 'all' ? '' : '[data-cat="' + currentFilter + '"]'}`).length;
+  const smWrap = document.getElementById('see-more-wrap');
+  smWrap.style.display = total > 4 ? 'block' : 'none';
+}
+
+// ── SEE MORE / SEE LESS ──
+function toggleMore() {
+  isExpanded = !isExpanded;
+  const btn = document.getElementById('btn-see-more');
+  btn.classList.toggle('expanded', isExpanded);
+  applyFilter();
+  // Scroll to button if collapsing
+  if (!isExpanded) {
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Init gallery
+applyFilter();
+
+// ── SLIDER ──
+const track = document.getElementById('slider-track');
+const slides = track ? track.querySelectorAll('.slide-item') : [];
+const dotsContainer = document.getElementById('slider-dots');
+let currentSlide = 0;
+const slidesVisible = () => window.innerWidth < 500 ? 1 : window.innerWidth < 900 ? 2 : 3;
+
+// Build dots
+if (slides.length > 0 && dotsContainer) {
+  const totalDots = Math.ceil(slides.length / slidesVisible());
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  if (!dotsContainer) return;
+  document.querySelectorAll('.slider-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentSlide);
+  });
+}
+
+function goToSlide(index) {
+  if (!track || slides.length === 0) return;
+  const sv = slidesVisible();
+  const maxSlide = Math.max(0, Math.ceil(slides.length / sv) - 1);
+  currentSlide = Math.max(0, Math.min(index, maxSlide));
+  const slideW = slides[0].getBoundingClientRect().width + 3; // +gap
+  track.scrollTo({ left: currentSlide * sv * slideW, behavior: 'smooth' });
+  updateDots();
+}
+
+function slideMove(dir) {
+  const sv = slidesVisible();
+  const maxSlide = Math.max(0, Math.ceil(slides.length / sv) - 1);
+  goToSlide(Math.max(0, Math.min(currentSlide + dir, maxSlide)));
+}
+
+// Auto-play slider
+let sliderTimer = setInterval(() => slideMove(1), 4000);
+if (track) {
+  track.addEventListener('mouseenter', () => clearInterval(sliderTimer));
+  track.addEventListener('mouseleave', () => {
+    sliderTimer = setInterval(() => slideMove(1), 4000);
+  });
+}
+
+// ── SCROLL REVEAL ──
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// ── LIGHTBOX ──
+function openLb(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxuglGptwPYRsTK-DwgnBUE1Tsg3dSjdokCPtLYjfME2b6pl-Ue-2FyNAXOuW9-IZ38mQ/exec';
+
+
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('f-submit');
+    const btnText = document.getElementById('btn-text');
+    const btnLoading = document.getElementById('btn-loading');
+
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    data.timestamp = new Date().toISOString();
+
+    // Send to Netlify
+    const netlifyPromise = fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    }).catch(() => {});
+
+    // Send to Google Sheets (if URL configured)
+    // Send to Google Sheets
+const sheetsPromise = fetch(GOOGLE_SHEET_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  body: JSON.stringify(data)
+}).catch(() => {});
+
+
+    await Promise.allSettled([netlifyPromise, sheetsPromise]);
+
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+}
+
+// ── CURSOR: touch fix ──
+if (window.matchMedia('(pointer: fine)').matches) {
+  document.body.style.cursor = 'none';
+} else {
+  document.getElementById('cur').style.display = 'none';
+  document.getElementById('cur-ring').style.display = 'none';
+  document.body.style.cursor = 'auto';
+  const styleEl = document.createElement('style');
+  styleEl.textContent = '*, *::before, *::after { cursor: auto !important; } a, button { cursor: pointer !important; }';
+  document.head.appendChild(styleEl);
+}
+</script>
+</body>
+</html>
